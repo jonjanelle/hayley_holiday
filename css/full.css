@@ -5,7 +5,12 @@
  */
 
 body {
+	/*
   background: url('./OneChanceToSaveFig.jpg') no-repeat top center fixed;
-  
+  */
   background-color: black;
+}
+
+.msg {
+	text-transform: uppercase;
 }

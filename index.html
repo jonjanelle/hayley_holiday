@@ -11,33 +11,69 @@
     <link href="css/full.css" rel="stylesheet">
   </head>
   <body>
-	<div style="margin-top:480px"></div>
-	<div class="text-center" style="font-size:18px; font-weight: bolder;">
-	<span style="color:red;" class="text-center msg" id="msg1">we</span>
-	<span style="color:red;" class="text-center msg" id="msg2">know</span>
-	<span style="color:red;" class="text-center msg" id="msg3">where</span>
-	<span style="color:red;" class="text-center msg" id="msg4">fig</span>
-	<span style="color:red;" class="text-center msg" id="msg5">lives.</span>
+	<div class="row">
+		<div class="col text-center">
+			<img src="OneChanceToSaveFig.jpg" id="main-img" style="margin:auto; display:block;" class="img-fluid">
+		</div>
+	</div>
+
+	<div class="row text-center" style="font-size:18px; font-weight: bolder;">
+		<div class="col">
+			<span style="color:red; font-size: 28px;" class="text-center whole-msg"></span>
+			<span style="color:red;" class="text-center msg" id="msg1">we</span>
+			<span style="color:red;" class="text-center msg" id="msg2">know</span>
+			<span style="color:red;" class="text-center msg" id="msg3">where</span>
+			<span style="color:red;" class="text-center msg" id="msg4">fig</span>
+			<span style="color:red;" class="text-center msg" id="msg5">lives.</span>
+		</div>
 	</div>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			$(".msg").hide();
-			setTimeout(function(){ $('#msg1').fadeIn() }, 2000);
-			setTimeout(function(){ $('#msg2').fadeIn() }, 3000);
-			setTimeout(function(){ $('#msg3').fadeIn() }, 4000);
-			setTimeout(function(){ $('#msg4').fadeIn() }, 5000);
-			setTimeout(function(){ $('#msg5').fadeIn() }, 6000);
+			$(".whole-msg").hide();
+			setTimeout(function(){ $('#msg1').fadeIn(2000, function() {
+				setTimeout(function(){ $('#msg2').fadeIn(1000, function(){
+					setTimeout(function(){ $('#msg3').fadeIn(1000, function() {
+						setTimeout(function(){ $('#msg4').fadeIn(1000, function(){
+							setTimeout(function(){ $('#msg5').fadeIn(1000, function() {
+							})});
+						})});
+					})});
+				})});
+			})});
+			
+			
 			setTimeout(function(){ 
 				var fontSize=16;
-				for (var i = 0; i < 10; i++) {
+				for (var i = 0; i < 2; i++) {
 					$('.msg').fadeOut({duration: 2000});
 					$('.msg').fadeIn({duration:2000});
-					fontSize += 1;
+					fontSize += 5;
 					$('.msg').css("font-size", fontSize+"px");
 				}
 			}, 7000);
+			
+			setTimeout(function() {
+				$("#main-img").attr("src", "fig.jpg");
+				$(".msg").hide();
+				$(".whole-msg").show();
+				$(".whole-msg").text("WE'RE SUPER SERIOUS.");
+			}, 16000);
+			setTimeout(function() {
+				$("#main-img").attr("src", "fig2.jpg");
+				$(".whole-msg").text("LOOK, THERE SHE IS!");
+			}, 22000);
+			setTimeout(function() {
+				$("#main-img").attr("src", "fig3.jpg");
+				$(".whole-msg").text("WE'RE PROBABLY WATCHING HER RIGHT NOW.");
+			}, 27000);
+			setTimeout(function() {
+				$("#main-img").attr("src", "OneChanceToSaveFig.jpg");
+				$(".whole-msg").text("DON'T BE LATE. OR ELSE.");
+			}, 32000);
+			
 		});
 	</script>
   </body>
