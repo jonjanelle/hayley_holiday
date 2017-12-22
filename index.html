@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Happy Holidays Hayley!</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/full.css" rel="stylesheet">
+  </head>
+  <body>
+	<div style="margin-top:480px"></div>
+	<div class="text-center" style="font-size:18px; font-weight: bolder;">
+	<span style="color:red;" class="text-center msg" id="msg1">we</span>
+	<span style="color:red;" class="text-center msg" id="msg2">know</span>
+	<span style="color:red;" class="text-center msg" id="msg3">where</span>
+	<span style="color:red;" class="text-center msg" id="msg4">fig</span>
+	<span style="color:red;" class="text-center msg" id="msg5">lives.</span>
+	</div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".msg").hide();
+			setTimeout(function(){ $('#msg1').fadeIn() }, 2000);
+			setTimeout(function(){ $('#msg2').fadeIn() }, 3000);
+			setTimeout(function(){ $('#msg3').fadeIn() }, 4000);
+			setTimeout(function(){ $('#msg4').fadeIn() }, 5000);
+			setTimeout(function(){ $('#msg5').fadeIn() }, 6000);
+			setTimeout(function(){ 
+				var fontSize=16;
+				for (var i = 0; i < 10; i++) {
+					$('.msg').fadeOut({duration: 2000});
+					$('.msg').fadeIn({duration:2000});
+					fontSize += 1;
+					$('.msg').css("font-size", fontSize+"px");
+				}
+			}, 7000);
+		});
+	</script>
+  </body>
+</html>
